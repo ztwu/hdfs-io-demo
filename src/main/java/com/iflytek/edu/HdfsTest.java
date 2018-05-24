@@ -3,7 +3,9 @@ package com.iflytek.edu;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Created with Intellij IDEA.
@@ -50,11 +52,12 @@ public class HdfsTest {
         if(fs.exists(path)){
             FSDataInputStream is = fs.open(path);
             FileStatus status = fs.getFileStatus(path);
-            byte[] buffer = new byte[Integer.parseInt(String.valueOf(status.getLen()))];
-            is.readFully(0, buffer);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is,"UTF-8"));
+            String line;
+            while((line = br.readLine())!=null){
+                System.out.println(line);
+            }
             is.close();
-            fs.close();
-            System.out.println(buffer.toString());
         }
     }
 
@@ -69,10 +72,10 @@ public class HdfsTest {
     }
 
     public static void main(String[] args) throws IOException {
-        createFile();
-//        deleteFile();
-//        writeFile();
-//        readFile();
+//        createFile();
+        deleteFile();
+        writeFile();
+        readFile();
 //        copyFromLocalFile();
     }
 
