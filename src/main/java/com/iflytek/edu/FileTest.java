@@ -12,6 +12,8 @@ import java.nio.charset.Charset;
  * nputStream 和 OutStream  字节流
  * InputStreamReader 和 OutStreamWriter  字符流（桥梁），可以设置字符编码
  * BufferedReader 和 BufferedWriter  把字节或者字符放入缓冲区，提高读写速度
+ * BufferedRead提供了一套缓冲机制，读取文件时先在内存中建立一块缓冲区，然后读取文件填满缓冲区，
+ * 然后在缓冲区中对文件进行实际的操作，当缓冲区读完后调用read方法继续填充缓冲区；
  *
  * 2.要先用字节流来读取或者写入文件，因为可以避免中文乱码。
  * 3.面对存入文件的数据类型不同选取不同的流方式：字节流，字符流，对象流。
