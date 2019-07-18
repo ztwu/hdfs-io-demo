@@ -16,9 +16,10 @@ import java.io.InputStreamReader;
  */
 
 public class HdfsTest {
+
     public static void createFile() throws IOException {
         Configuration conf = new Configuration();
-        conf.set("fs.default.name", "hdfs://ns-hf");
+        conf.set("fs.default.name", "hdfs://localhost:9000");
         FileSystem fs = FileSystem.get(conf);
         Path path = new Path("/project/edu_edcc/ztwu2/temp/testHDFS.txt");
         fs.create(path);
@@ -72,10 +73,10 @@ public class HdfsTest {
     }
 
     public static void main(String[] args) throws IOException {
-//        createFile();
-        deleteFile();
-        writeFile();
-        readFile();
+        createFile();
+//        deleteFile();
+//        writeFile();
+//        readFile();
 //        copyFromLocalFile();
     }
 
