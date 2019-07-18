@@ -28,8 +28,8 @@ public class OrcHdfsTest {
     public static void main(String[] args){
         OrcHdfsTest orcHdfsTest = new OrcHdfsTest();
         try {
-//            orcHdfsTest.wirteOrc();
-            orcHdfsTest.readOrc();
+            orcHdfsTest.wirteOrc();
+//            orcHdfsTest.readOrc();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,9 +47,9 @@ public class OrcHdfsTest {
                 .addField("boolean_value", TypeDescription.createBoolean())
                 .addField("string_value", TypeDescription.createString());
 
-        if(new File("data/my-file.orc").exists()){
-            new File("data/my-file.orc").deleteOnExit();
-        }
+//        if(new File("data/my-file.orc").exists()){
+//            new File("data/my-file.orc").deleteOnExit();
+//        }
         Writer writer = OrcFile.createWriter(new Path("data/my-file.orc"),
                 OrcFile.writerOptions(conf)
                         .setSchema(schema));
