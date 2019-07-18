@@ -47,7 +47,8 @@ public class CompressHdfsTest {
 
         *//*解压操作*//*
         com.hadoop.compression.lzo.LzopCodec /vehicle/alarm/2018/07/10   .lzo .log*/
-        String[] uargs = new String[]{"compress","org.apache.hadoop.io.compress.GzipCodec","/user/root/data/my-file.orc",".orc",".gz"};
+        String[] uargs = new String[]{"uncompress","org.apache.hadoop.io.compress.GzipCodec","/user/root/data/my-file.gz",".gz",".orc"};
+//        String[] uargs = new String[]{"compress","org.apache.hadoop.io.compress.GzipCodec","/user/root/data/my-file.orc",".orc",".gz"};
         String opt_type = uargs[0];
         String code_class = uargs[1];
         String source_dir = uargs[2];
