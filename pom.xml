@@ -10,7 +10,21 @@
 
     <!-- 设定除中央仓库(repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查找. -->
     <repositories>
+
         <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <layout>default</layout>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+
+        <!--<repository>
             <id>repo-ifly</id>
             <url>http://maven.iflytek.com:8081/nexus/content/groups/public/</url>
         </repository>
@@ -25,10 +39,10 @@
         <repository>
             <id>repo-mirror</id>
             <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-        </repository>
+        </repository>-->
     </repositories>
     <pluginRepositories>
-        <pluginRepository>
+        <!--<pluginRepository>
             <id>repo1-cache</id>
             <name>repo1-cache</name>
             <url>http://maven.iflytek.com:8081/nexus/content/groups/public/</url>
@@ -36,7 +50,7 @@
         <pluginRepository>
             <id>repo-mirror</id>
             <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-        </pluginRepository>
+        </pluginRepository>-->
     </pluginRepositories>
 
     <dependencies>
@@ -50,6 +64,20 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>2.7.1</version>
+        </dependency>
+
+        <!--orc-->
+        <dependency>
+            <groupId>org.apache.orc</groupId>
+            <artifactId>orc-core</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+
+        <!--parquet-->
+        <dependency>
+            <groupId>org.apache.parquet</groupId>
+            <artifactId>parquet-hadoop</artifactId>
+            <version>1.7.0</version>
         </dependency>
 
         <!--java api hdfs-->

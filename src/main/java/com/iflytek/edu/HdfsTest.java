@@ -73,10 +73,10 @@ public class HdfsTest {
     }
 
     public static void main(String[] args) throws IOException {
-        createFile();
+//        createFile();
 //        deleteFile();
 //        writeFile();
-//        readFile();
+        readFile();
 //        copyFromLocalFile();
     }
 
