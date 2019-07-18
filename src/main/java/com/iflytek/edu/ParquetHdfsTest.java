@@ -199,8 +199,8 @@ public class ParquetHdfsTest {
     }
 
     public static void main(String[] args){
-//        writeParquetToHDFS("192.168.1.101","9000","/tmp","test1.parq");
-        readParquetFromHDFS("192.168.1.101","9000","/tmp","test1.parq");
+        writeParquetToHDFS("192.168.1.101","9000","/tmp","test1.parq");
+//        readParquetFromHDFS("192.168.1.101","9000","/tmp","test1.parq");
     }
 
 }

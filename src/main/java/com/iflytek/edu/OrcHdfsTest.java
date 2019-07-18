@@ -28,8 +28,8 @@ public class OrcHdfsTest {
     public static void main(String[] args){
         OrcHdfsTest orcHdfsTest = new OrcHdfsTest();
         try {
-//            orcHdfsTest.wirteOrc();
-            orcHdfsTest.readOrc();
+            orcHdfsTest.wirteOrc();
+//            orcHdfsTest.readOrc();
         } catch (IOException e) {
             e.printStackTrace();
         }

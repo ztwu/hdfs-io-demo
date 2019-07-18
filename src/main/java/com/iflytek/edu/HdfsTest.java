@@ -45,11 +45,21 @@ public class HdfsTest {
         fs.close();
     }
 
+    public static void appendFile() throws IOException {
+        Configuration conf = new Configuration();
+        conf.set("fs.default.name", "hdfs://192.168.1.101:9000");
+        FileSystem fs = FileSystem.get(conf);
+        Path path = new Path("/user/hdfs/data/test.txt");
+        FSDataOutputStream out = fs.append(path);
+        out.writeUTF("nihaoya");
+        fs.close();
+    }
+
     public static void readFile() throws IOException {
         Configuration conf = new Configuration();
         conf.set("fs.default.name", "hdfs://192.168.1.101:9000");
         FileSystem fs = FileSystem.get(conf);
-        Path path = new Path("/user/ztwu/hadoop/data/test.txt");
+        Path path = new Path("/user/hdfs/data/test.txt");
         if(fs.exists(path)){
             FSDataInputStream is = fs.open(path);
             FileStatus status = fs.getFileStatus(path);
@@ -76,6 +86,7 @@ public class HdfsTest {
 //        createFile();
 //        deleteFile();
 //        writeFile();
+        appendFile();
         readFile();
 //        copyFromLocalFile();
     }
